@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import CurrencyFilter from './CurrencyFilter/CurrencyFilter';
+import TransferFilter from './TransferFilter/TransferFilter';
 
 class Sidebar extends Component {
     render() {
@@ -8,8 +9,8 @@ class Sidebar extends Component {
             <div className="Sidebar">
                 <span>ВАЛЮТА</span>
                 <CurrencyFilter/>
-                <span>TRANSFER FILTER</span>
-
+                <span>КОЛИЧЕСТВО ПЕРЕСАДОК</span>
+                <TransferFilter/>
             </div>
         );
     }

@@ -1,0 +1,38 @@
+.TransferFilter {
+
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+}
+
+.TransferFilter ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.TransferFilter li {
+    //padding-bottom: 5px;padding-top: 5px;
+    padding-left: 10%;
+
+    font-family: Helvetica;
+    font-size: 13px;
+    color: #4A4A4A;
+    line-height: 35px;
+
+}
+
+.TransferFilter li:hover {
+   // margin: 10px;
+    /* Rectangle 30: */
+    background: #F1FCFF;
+}
+
+.TransferFilter input {
+    background: #FFFFFF;
+    border: 1px solid #D2D5D6;
+    border-radius: 3px;
+    width: 19px;
+    height: 19px;
+}
+
