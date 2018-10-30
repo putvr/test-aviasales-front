@@ -1,0 +1,33 @@
+.CurrencyFilter {
+   margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.CurrencyFilter div {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #D2D5D6;
+    padding: 10px;
+    color: #298CEC;
+}
+
+.CurrencyFilter .first {
+    border-radius: 5px 0 0 5px;
+}
+
+.CurrencyFilter .last {
+    border-radius: 0 5px 5px 0;
+}
+
+.CurrencyFilter :active,
+.CurrencyFilter .active {
+    background: #2196F3;
+    color: white;
+}
+
+.CurrencyFilter :hover {
+    background: #F2FCFF;
+    color: #298CEC;
+    border: 1px solid #64B5F5;
+    cursor: pointer;
+}
