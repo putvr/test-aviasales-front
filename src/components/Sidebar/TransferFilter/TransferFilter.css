@@ -26,6 +26,7 @@
    // margin: 10px;
     /* Rectangle 30: */
     background: #F1FCFF;
+    cursor: pointer;
 }
 
 .TransferFilter input {

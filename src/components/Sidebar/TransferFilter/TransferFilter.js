@@ -47,11 +47,11 @@ class TransferFilter extends Component {
                         }
 
                         return (
-                            <li key={index}>
+                            <li key={index} onClick={() => this.transferSelectedHandler(value)}>
                                 <input
                                     type="checkbox"
                                     defaultChecked={selected}
-                                    onChange={() => this.transferSelectedHandler(value)}
+                                    //onChange={() => this.transferSelectedHandler(value)}
                                 />
                                 {value}
                             </li>);
