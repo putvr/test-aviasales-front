@@ -6,8 +6,6 @@
     margin-right: 5%;
     margin-bottom: 20px;
     padding-bottom: 40px;
-    //box-sizing: border-box;
-   // background-color: red;
 }
 
 .TicketInfo {
@@ -24,16 +22,18 @@
 .TicketSchedule {
     margin-left: 30%;
     padding-left: 5%;
-    border-left: 1px solid #ECEFF1 ;
-
+    border-left: 1px solid #ECEFF1;
 }
 
 .TicketInfo button {
     background: #FF6D00;
-    box-shadow: 0 1px 0 0 #D64D08, 0 2px 1px 0 rgba(0,0,0,0.10);
+   // box-shadow: 0 1px 0 0 #D64D08, 0 2px 1px 0 rgba(0,0,0,0.10);
     border-radius: 5px;
     font-family: Helvetica;
     font-size: 16px;
+    margin-top: 20px;
+    //margin-bottom: 20px;
+    color: white;
 }
 .TicketInfo button:hover {
     cursor: pointer;
@@ -64,17 +64,20 @@
 }
 
 .TicketDeparture {
-    width: 40%;
+    width: 35%;
     float: left;
 }
 
 .TicketArrival{
-    width: 40%;
+    width: 35%;
     float: right;
+    text-align: right;
+    padding-right: 10px;
 }
 
 .TicketStops {
-    width: 20%;
+    width: 25%;
+    height: 15px;
     float: left;
     margin-top: 20px;
     font-family: '.AppleSystemUIFont';
@@ -83,4 +86,5 @@
     text-align: center;
     line-height: 12.1px;
 }
+
 
