@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 //import PropTypes from 'prop-types';
 
 import './TransferFilter.css';
+import inactive from './checklistDisabled.svg';
+import active from './checklistEnabled.svg';
 
 class TransferFilter extends Component {
     constructor(props) {
@@ -14,7 +16,7 @@ class TransferFilter extends Component {
                 {id: 3, name: '2 пересадки', selected: false},
                 {id: 4, name: '3 пересадки', selected: false}]
         };
-        this.transferSelectedHandler = this.transferSelectedHandler.bind(this)
+        //this.transferSelectedHandler = this.transferSelectedHandler.bind(this)
     }
 
     transferSelectedHandler(id) {
@@ -35,7 +37,6 @@ class TransferFilter extends Component {
         console.log(updatedList);
 
         this.setState({
-            //transfersList[id].selected: !transfersList[id].selected
             transfersList: updatedList
         })
     }
@@ -46,15 +47,14 @@ class TransferFilter extends Component {
                 <ul>
                     {this.state.transfersList.map((value) => {
                         return (
-                            <li key={value.id} onClick={() => this.transferSelectedHandler(value.id)}>
-                                <input
-                                    type="checkbox"
-                                    defaultChecked={value.selected}
-                                />
-                                {value.name}
+                            <li
+                                className="FilterSelect"
+                                key={value.id}
+                                onClick={() => this.transferSelectedHandler(value.id)}>
+                                <img src={`${value.selected? active : inactive}`} alt=""/>
+                                <span>{value.name}</span>
                             </li>);
-                    })
-                    }
+                    })}
                 </ul>
             </div>
         );
