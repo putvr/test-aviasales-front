@@ -22,6 +22,7 @@
 .CurrencyFilter :active,
 .CurrencyFilter .active {
     background: #2196F3;
+    border: 1px solid #2196F3;
     color: white;
 }
 
