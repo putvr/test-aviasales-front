@@ -8,52 +8,50 @@ class TransferFilter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            'transfersList':
-                ['Все',
-                    'Без пересадок',
-                    '1 пересадка',
-                    '2 пересадки',
-                    '3 пересадки'],
-            'selected': ['Все',]
-        }
+            transfersList: [{id: 0, name: 'Все', selected: false},
+                {id: 1, name: 'Без пересадок', selected: false},
+                {id: 2, name: '1 пересадка', selected: false},
+                {id: 3, name: '2 пересадки', selected: false},
+                {id: 4, name: '3 пересадки', selected: false}]
+        };
+        this.transferSelectedHandler = this.transferSelectedHandler.bind(this)
     }
 
-    transferSelectedHandler(value) {
+    transferSelectedHandler(id) {
+        let updatedList = [...this.state.transfersList];
 
-        let selected = this.state.selected;
+        updatedList[id].selected = !updatedList[id].selected;
 
-        if (this.state.selected.indexOf(value) >= 0) {
-            selected = selected.splice(selected.indexOf(value), 1);
-        } else {
-            selected.push(value)
+        if (id === 0) {
+            updatedList.map((value) => {
+                return value.selected = false
+            });
+            updatedList[0].selected = true;
         }
+        else {
+            updatedList[0].selected = false;
+        }
+
+        console.log(updatedList);
 
         this.setState({
-            'selected': selected
+            //transfersList[id].selected: !transfersList[id].selected
+            transfersList: updatedList
         })
     }
-
 
     render() {
         return (
             <div className="TransferFilter">
                 <ul>
-                    {this.state.transfersList.map((value, index) => {
-
-                       let selected = false;
-                       if (this.state.selected.indexOf(value) >= 0) {
-                            selected = true;
-                           console.log(this.state.selected);
-                        }
-
+                    {this.state.transfersList.map((value) => {
                         return (
-                            <li key={index} onClick={() => this.transferSelectedHandler(value)}>
+                            <li key={value.id} onClick={() => this.transferSelectedHandler(value.id)}>
                                 <input
                                     type="checkbox"
-                                    defaultChecked={selected}
-                                    //onChange={() => this.transferSelectedHandler(value)}
+                                    defaultChecked={value.selected}
                                 />
-                                {value}
+                                {value.name}
                             </li>);
                     })
                     }

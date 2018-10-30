@@ -8,14 +8,12 @@ const Ticket = (props) => (
 
     <div className="Ticket">
 
-
         <div className="TicketInfo">
             <img src={logo} alt=""/>
             <button>Купить<br/>за {props.ticket.price} ₽</button>
         </div>
 
         <div className="TicketSchedule">
-
             <div className="TicketLine-1">
                 <div className="TicketDeparture FontTime">{props.ticket.departure_time}</div>
                 <div className="TicketStops">

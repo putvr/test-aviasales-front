@@ -27,7 +27,7 @@ class Content extends Component {
             string.split('.')[1] - 1,
             string.split('.')[0]);
 
-        console.log(date, string);
+        //console.log(date, string);
 
         return days[date.getDay() - 1];
 
