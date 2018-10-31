@@ -27,10 +27,7 @@ class Content extends Component {
             string.split('.')[1] - 1,
             string.split('.')[0]);
 
-        //console.log(date, string);
-
         return days[date.getDay() - 1];
-
     }
 
     componentWillMount() {
@@ -158,25 +155,20 @@ class Content extends Component {
 
         data.map((value) => {
 
-            let stops_attr;
             let stops_count;
 
             switch (value.stops) {
                 case 0:
-                    stops_attr = '';
                     stops_count = '';
                     break;
                 case 1:
-                    stops_attr = 'пересадка';
-                    stops_count = 1;
+                    stops_count = '1 пересадка';
                     break;
                 default:
-                    stops_attr = 'пересадки';
-                    stops_count = value.stops;
+                    stops_count = value.stops + ' пересадки';
             }
 
             return (
-                value.stops_attr = stops_attr,
                     value.stops_count = stops_count,
                     value.departure_date_day = this.getDayOfWeek(value.departure_date),
                     value.arrival_date_day = this.getDayOfWeek(value.arrival_date)
@@ -190,7 +182,7 @@ class Content extends Component {
 
     render() {
         return (
-            <div className="Content">
+            <div className="col-md-8">
                 {this.state.tickets.map((value, index) => {
                         return <Ticket ticket={value} key={index}/>
                     }

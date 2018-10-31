@@ -1,29 +1,12 @@
+body {
+    background-color: #F3F7FA;
+}
+
 .App {
+    //background-color: #298CEC;
+}
+
+.Header {
     text-align: center;
 }
 
-.Sidebar {
-    float: left;
-    margin-left: 5%;
-    padding-top: 20px;
-    background: white;
-    border-radius: 5px;
-    width: 30%;
-    text-align: left;
-}
-
-.Sidebar span {
-    // background-color: red;
-    font-family: '.AppleSystemUIFont';
-    font-size: 12px;
-    color: #4A4A4A;
-    letter-spacing: 0.5px;
-    line-height: 19px;
-    width: 100%;
-    padding-left: 10%;
-}
-
-.Content {
-    color: black;
-    margin-left: 35%;
-}

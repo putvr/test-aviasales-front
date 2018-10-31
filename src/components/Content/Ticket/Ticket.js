@@ -6,36 +6,52 @@ import arrow from './arrow.svg';
 
 const Ticket = (props) => (
 
-    <div className="Ticket">
+    <div className="container rounded Ticket">
 
-        <div className="TicketInfo">
-            <img src={logo} alt=""/>
-            <button>Купить<br/>за {props.ticket.price} ₽</button>
-        </div>
-
-        <div className="TicketSchedule">
-            <div className="TicketLine-1">
-                <div className="TicketDeparture FontTime">{props.ticket.departure_time}</div>
-                <div className="TicketStops">
-                    <div>{props.ticket.stops_count} </div>
-                    <div
-                        style={{backgroundImage: 'url(' + arrow + ')', backgroundPosition: 'right', width: '100%', height: '100%'}}
-                    >{props.ticket.stops_attr}</div>
+        <div className="row">
+            <div className="col-4 TicketInfo">
+                <div className="container ">
+                    <div className="row pt-3"></div>
+                    <div className="row ">
+                        <div className="col text-center">
+                            <img src={logo} className="img-fluid" alt=""/>
+                            <button className="btn">Купить<br/>за {props.ticket.price} ₽</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="TicketArrival FontTime">{props.ticket.arrival_time}</div>
+                <div className="row pb-3"></div>
             </div>
 
-            <div className="TicketLine-2 FontCity">
-                <div className="TicketDeparture">
-                    {props.ticket.origin}, {props.ticket.origin_name} <br/>
-                    {props.ticket.departure_date}, {props.ticket.departure_date_day}
+            <div className="col-8">
+                <div className="container ">
+                    <div className="row pt-3"></div>
+                    <div className="row">
+                        <div className="col-4 text-center FontTime">{props.ticket.departure_time}</div>
+                        <div className="col-4 text-center TicketStops">
+                            <div>{props.ticket.stops_count}</div>
+                            <img src={arrow} alt="" />
+                        </div>
+                        <div className="col-4 text-right TicketArrival FontTime">{props.ticket.arrival_time}</div>
+                    </div>
                 </div>
-                <div className="TicketArrival ">
-                    {props.ticket.destination}, {props.ticket.destination_name} <br/>
-                    {props.ticket.arrival_date}, {props.ticket.arrival_date_day}
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-5 text-left FontCity">
+                            {props.ticket.origin}, {props.ticket.origin_name} <br/>
+                            {props.ticket.departure_date}, {props.ticket.departure_date_day}
+                        </div>
+                        <div className="col-5 offset-2 text-right FontCity  ">
+                            {props.ticket.destination}, {props.ticket.destination_name} <br/>
+                            {props.ticket.arrival_date}, {props.ticket.arrival_date_day}
+                        </div>
+                    </div>
+                    <div className="row pb-3"></div>
                 </div>
             </div>
         </div>
+
+        <div className="row mb-3"></div>
     </div>
 );
 

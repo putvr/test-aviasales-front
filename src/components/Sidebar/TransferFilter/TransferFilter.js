@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 //import PropTypes from 'prop-types';
-
 import './TransferFilter.css';
+
 import inactive from './checklistDisabled.svg';
 import active from './checklistEnabled.svg';
 
@@ -16,7 +16,6 @@ class TransferFilter extends Component {
                 {id: 3, name: '2 пересадки', selected: false},
                 {id: 4, name: '3 пересадки', selected: false}]
         };
-        //this.transferSelectedHandler = this.transferSelectedHandler.bind(this)
     }
 
     transferSelectedHandler(id) {
