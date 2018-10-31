@@ -29,7 +29,7 @@ class CurrencyFilter extends Component {
 
     render() {
         return (
-            <div className="btn-group" role="group">
+            <div className="btn-group col-sm pl-0" role="group">
                 {this.state.currencyList.map((value, index) => {
                     return (
                         <button

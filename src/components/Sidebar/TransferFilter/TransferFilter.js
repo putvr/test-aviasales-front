@@ -46,7 +46,7 @@ class TransferFilter extends Component {
                     {this.state.transfersList.map((value) => {
                         return (
                             <li
-                                className="list-group-item"
+                                className="list-group-item pl-0"
                                 key={value.id}
                                 onClick={() => this.transferSelectedHandler(value.id)}>
                                 <img src={`${value.selected? active : inactive}`} alt="" className="img-fluid"/>
