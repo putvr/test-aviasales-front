@@ -7,39 +7,38 @@ class CurrencyFilter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            'currencyList': ['RUB', 'USB', 'EUR'],
-            'activeCurrency': 'RUB'
+            'currencyList': [
+                {name: 'RUB', active: true}, {name: 'USB', active: false}, { name:'EUR', active: false}
+                ]
         };
     }
 
-    currencySelectedHandler(value) {
-         this.setState({
-             'activeCurrency': value
-         });
+    currencySelectedHandler(index) {
+        let updateList = [...this.state.currencyList];
+
+        updateList.map( (value) => {
+            return value.active = false;
+        });
+
+        updateList[index].active = true;
+
+        this.setState({
+            currencyList: updateList
+        });
     }
 
     render() {
-
         return (
-            <div className="CurrencyFilter">
+            <div className="btn-group" role="group">
                 {this.state.currencyList.map((value, index) => {
-
-                    let cls = '';
-                    if (index === 0) {
-                        cls = 'first';
-                    }
-                    if (index === this.state.currencyList.length - 1) {
-                        cls = 'last';
-                    }
-                    if (value === this.state.activeCurrency) {
-                        cls += ' active';
-                    }
-
                     return (
-                        <div className={cls}
-                             onClick={() => this.currencySelectedHandler(value)}
-                             key={index}
-                        >{value}</div>
+                        <button
+                            className={`btn btn-secondary CurrencyFilter${ value.active? ' activeButton' : ''}`}
+                            type="button"
+                            onClick={() => this.currencySelectedHandler(index)}
+                            key={index}
+                        >{value.name}
+                        </button>
                     );
                 })
                 }

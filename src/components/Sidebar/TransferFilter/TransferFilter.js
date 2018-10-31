@@ -42,20 +42,18 @@ class TransferFilter extends Component {
 
     render() {
         return (
-            <div className="TransferFilter">
-                <ul>
+                <ul className="list-group list-group-flush TransferFilter">
                     {this.state.transfersList.map((value) => {
                         return (
                             <li
-                                className="FilterSelect"
+                                className="list-group-item"
                                 key={value.id}
                                 onClick={() => this.transferSelectedHandler(value.id)}>
-                                <img src={`${value.selected? active : inactive}`} alt=""/>
+                                <img src={`${value.selected? active : inactive}`} alt="" className="img-fluid"/>
                                 <span>{value.name}</span>
                             </li>);
                     })}
                 </ul>
-            </div>
         );
     }
 }

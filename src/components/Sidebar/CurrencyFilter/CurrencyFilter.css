@@ -1,38 +1,20 @@
+
 .CurrencyFilter {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 10%;
-}
-
-.CurrencyFilter div {
-    display: inline-block;
-    box-sizing: border-box;
     border: 1px solid #D2D5D6;
-    padding: 10px;
     color: #298CEC;
-    //width: 68px;
-    //height: 40px;
-    text-align: center;
-}
-
-.CurrencyFilter .first {
-    border-radius: 5px 0 0 5px;
-}
-
-.CurrencyFilter .last {
-    border-radius: 0 5px 5px 0;
+    background-color: white;
 }
 
 .CurrencyFilter :active,
-.CurrencyFilter .active {
+.activeButton {
     background: #2196F3;
     border: 1px solid #2196F3;
     color: white;
 }
 
 .CurrencyFilter :hover {
-    background: #F2FCFF;
-    color: #298CEC;
-    border: 1px solid #64B5F5;
+    background: #F2FCFF !important;
+    color: #298CEC !important;
+    border: 1px solid #64B5F5 !important;
     cursor: pointer;
 }
