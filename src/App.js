@@ -17,7 +17,8 @@ class App extends Component {
 
                 <div className="row">
                     <Sidebar/>
-                    <Content/></div>
+                    <Content/>
+                </div>
             </div>
         );
     }

@@ -26,10 +26,10 @@ const Ticket = (props) => (
                 <div className="container ">
                     <div className="row pt-3"></div>
                     <div className="row">
-                        <div className="col-4 text-center FontTime">{props.ticket.departure_time}</div>
+                        <div className="col-4 text-left FontTime">{props.ticket.departure_time}</div>
                         <div className="col-4 text-center TicketStops">
                             <div>{props.ticket.stops_count}</div>
-                            <img src={arrow} alt="" />
+                            <img className="img-fluid" src={arrow} alt="" />
                         </div>
                         <div className="col-4 text-right TicketArrival FontTime">{props.ticket.arrival_time}</div>
                     </div>

@@ -8,7 +8,7 @@ import TransferFilter from './TransferFilter/TransferFilter';
 class Sidebar extends Component {
     render() {
         return (
-            <div className="col-md-4 ">
+            <div className="col-md-3 ">
                 <div className="card border-white Sidebar">
                     <div className="card-body ">
                         <span>ВАЛЮТА</span>
