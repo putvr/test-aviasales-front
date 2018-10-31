@@ -153,6 +153,8 @@ class Content extends Component {
             "price": 17400
         }];
 
+        data = data.sort( (a,b) =>  a.price - b.price );
+
         data.map((value) => {
 
             let stops_count;
