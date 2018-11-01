@@ -186,7 +186,7 @@ class Content extends Component {
         return (
             <div className="col-md-8">
                 {this.state.tickets.map((value, index) => {
-                        return <Ticket ticket={value} key={index}/>
+                        return <Ticket ticket={value} key={index} />
                     }
                 )}
             </div>
