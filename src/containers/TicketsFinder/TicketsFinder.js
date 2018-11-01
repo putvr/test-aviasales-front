@@ -7,15 +7,16 @@ import Content from '../../components/Content/Content';
 class TicketsFinder extends Component {
     state = {
         tickets: [],
-        transfersList: [{id: 0, name: 'Все', selected: false},
-            {id: 1, name: 'Без пересадок', selected: false},
-            {id: 2, name: '1 пересадка', selected: false},
-            {id: 3, name: '2 пересадки', selected: false},
-            {id: 4, name: '3 пересадки', selected: false}]
+        transfersList: [{id: 0, name: 'Все', selected: false, count: ''},
+            {id: 1, name: 'Без пересадок', selected: false, count: 0},
+            {id: 2, name: '1 пересадка', selected: false, count: 1},
+            {id: 3, name: '2 пересадки', selected: false, count: 2},
+            {id: 4, name: '3 пересадки', selected: false, count: 3}]
     };
 
     transferSelectedHandler = (id) => {
         let updatedList = [...this.state.transfersList];
+        let ticketList = [...this.state.tickets];
 
         updatedList[id].selected = !updatedList[id].selected;
 
@@ -29,10 +30,25 @@ class TicketsFinder extends Component {
             updatedList[0].selected = false;
         }
 
-        console.log(updatedList);
+        ticketList.map( (value) => {
+            let visible = false;
+
+            updatedList.forEach( (f) => {
+                if ( f.selected && value.stops === f.count ) {
+                    visible = true;
+                }
+            });
+
+            if (id === 0) {
+                visible = true;
+            }
+
+            return value.visible = visible;
+        });
 
         this.setState({
-            transfersList: updatedList
+            transfersList: updatedList,
+            tickets: ticketList
         })
     };
 
@@ -199,7 +215,8 @@ class TicketsFinder extends Component {
             return (
                 value.stops_count = stops_count,
                     value.departure_date_day = this.getDayOfWeek(value.departure_date),
-                    value.arrival_date_day = this.getDayOfWeek(value.arrival_date)
+                    value.arrival_date_day = this.getDayOfWeek(value.arrival_date),
+                    value.visible = true
             )
         });
 
