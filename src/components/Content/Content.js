@@ -5,9 +5,7 @@ import Ticket from './Ticket/Ticket';
 const Content = (props) => (
     <div className="col-md-8">
         {props.tickets.map((value, index) => {
-                if (value.visible) {
-                    return <Ticket ticket={value} key={index}/>
-                }
+                   return value.visible? <Ticket ticket={value} key={index}/> : '';
             }
         )}
     </div>

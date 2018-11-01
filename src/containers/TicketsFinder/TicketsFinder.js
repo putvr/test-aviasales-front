@@ -11,7 +11,12 @@ class TicketsFinder extends Component {
             {id: 1, name: 'Без пересадок', selected: false, count: 0},
             {id: 2, name: '1 пересадка', selected: false, count: 1},
             {id: 3, name: '2 пересадки', selected: false, count: 2},
-            {id: 4, name: '3 пересадки', selected: false, count: 3}]
+            {id: 4, name: '3 пересадки', selected: false, count: 3}],
+        'currencyList': [
+            {name: 'RUB', active: true},
+            {name: 'USB', active: false},
+            {name:'EUR', active: false}
+        ]
     };
 
     transferSelectedHandler = (id) => {
@@ -49,6 +54,20 @@ class TicketsFinder extends Component {
             transfersList: updatedList,
             tickets: ticketList
         })
+    };
+
+    currencySelectedHandler = (index) => {
+        let updateList = [...this.state.currencyList];
+
+        updateList.map( (value) => {
+            return value.active = false;
+        });
+
+        updateList[index].active = true;
+
+        this.setState({
+            currencyList: updateList
+        });
     };
 
     getDayOfWeek(string) {
@@ -229,7 +248,9 @@ class TicketsFinder extends Component {
             <div className="row">
                 <Sidebar
                     transfersList = {this.state.transfersList}
+                    currencyList = {this.state.currencyList}
                     transferSelectedHandler = {this.transferSelectedHandler}
+                    currencySelectedHandler = {this.currencySelectedHandler}
                 />
                 <Content
                     tickets = {this.state.tickets}
