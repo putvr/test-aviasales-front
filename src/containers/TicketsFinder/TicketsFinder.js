@@ -12,10 +12,10 @@ class TicketsFinder extends Component {
             {id: 2, name: '1 пересадка', selected: false, count: 1},
             {id: 3, name: '2 пересадки', selected: false, count: 2},
             {id: 4, name: '3 пересадки', selected: false, count: 3}],
-        'currencyList': [
-            {name: 'RUB', active: true},
-            {name: 'USB', active: false},
-            {name:'EUR', active: false}
+        currencyList: [
+            {name: 'RUB', code: '₽', active: true, value: 1},
+            {name: 'USD', code: '$', active: false, value: 70},
+            {name: 'EUR', code: '€', active: false, value: 80}
         ]
     };
 
@@ -34,11 +34,11 @@ class TicketsFinder extends Component {
             updatedList[id].selected = !updatedList[id].selected;
         }
 
-        ticketList.map( (value) => {
+        ticketList.map((value) => {
             let visible = false;
 
-            updatedList.forEach( (f) => {
-                if ( f.selected && value.stops === f.count ) {
+            updatedList.forEach((f) => {
+                if (f.selected && value.stops === f.count) {
                     visible = true;
                 }
             });
@@ -58,15 +58,25 @@ class TicketsFinder extends Component {
 
     currencySelectedHandler = (index) => {
         let updateList = [...this.state.currencyList];
+        let ticketList = [...this.state.tickets];
 
-        updateList.map( (value) => {
+        updateList.map((value) => {
             return value.active = false;
         });
 
         updateList[index].active = true;
 
+        ticketList.map((value) => {
+            const active_currency = updateList
+                .find((v) => {
+                    return v.active;
+                });
+            return value.price_currency = `${(value.price / active_currency.value).toFixed(2)} ${active_currency.code}`;
+        });
+
         this.setState({
-            currencyList: updateList
+            currencyList: updateList,
+            tickets: ticketList
         });
     };
 
@@ -213,7 +223,7 @@ class TicketsFinder extends Component {
             "price": 17400
         }];
 
-        data = data.sort( (a,b) =>  a.price - b.price );
+        data = data.sort((a, b) => a.price - b.price);
 
         data.map((value) => {
 
@@ -234,7 +244,8 @@ class TicketsFinder extends Component {
                 value.stops_count = stops_count,
                     value.departure_date_day = this.getDayOfWeek(value.departure_date),
                     value.arrival_date_day = this.getDayOfWeek(value.arrival_date),
-                    value.visible = true
+                    value.visible = true,
+                    value.price_currency = `${value.price } ₽`
             )
         });
 
@@ -247,13 +258,13 @@ class TicketsFinder extends Component {
         return (
             <div className="row">
                 <Sidebar
-                    transfersList = {this.state.transfersList}
-                    currencyList = {this.state.currencyList}
-                    transferSelectedHandler = {this.transferSelectedHandler}
-                    currencySelectedHandler = {this.currencySelectedHandler}
+                    transfersList={this.state.transfersList}
+                    currencyList={this.state.currencyList}
+                    transferSelectedHandler={this.transferSelectedHandler}
+                    currencySelectedHandler={this.currencySelectedHandler}
                 />
                 <Content
-                    tickets = {this.state.tickets}
+                    tickets={this.state.tickets}
                 />
             </div>
         );
