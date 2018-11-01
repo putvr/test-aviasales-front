@@ -3,23 +3,15 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import Content from './components/Content/Content';
+import Layout from './components/Layout/Layout';
+import TicketsFinder from './containers/TicketsFinder/TicketsFinder';
 
 class App extends Component {
     render() {
         return (
-            <div className="container App">
-                <div className="row Header">
-                    <Header/>
-                </div>
-
-                <div className="row">
-                    <Sidebar/>
-                    <Content/>
-                </div>
-            </div>
+            <Layout>
+                <TicketsFinder/>
+            </Layout>
         );
     }
 }
