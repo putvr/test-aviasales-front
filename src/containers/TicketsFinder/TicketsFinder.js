@@ -6,7 +6,34 @@ import Content from '../../components/Content/Content';
 
 class TicketsFinder extends Component {
     state = {
-        tickets: []
+        tickets: [],
+        transfersList: [{id: 0, name: 'Все', selected: false},
+            {id: 1, name: 'Без пересадок', selected: false},
+            {id: 2, name: '1 пересадка', selected: false},
+            {id: 3, name: '2 пересадки', selected: false},
+            {id: 4, name: '3 пересадки', selected: false}]
+    };
+
+    transferSelectedHandler = (id) => {
+        let updatedList = [...this.state.transfersList];
+
+        updatedList[id].selected = !updatedList[id].selected;
+
+        if (id === 0) {
+            updatedList.map((value) => {
+                return value.selected = false
+            });
+            updatedList[0].selected = true;
+        }
+        else {
+            updatedList[0].selected = false;
+        }
+
+        console.log(updatedList);
+
+        this.setState({
+            transfersList: updatedList
+        })
     };
 
     getDayOfWeek(string) {
@@ -184,7 +211,10 @@ class TicketsFinder extends Component {
     render() {
         return (
             <div className="row">
-                <Sidebar/>
+                <Sidebar
+                    transfersList = {this.state.transfersList}
+                    transferSelectedHandler = {this.transferSelectedHandler}
+                />
                 <Content
                     tickets = {this.state.tickets}
                 />

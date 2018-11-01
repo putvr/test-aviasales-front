@@ -8,7 +8,7 @@ import active from './checklistEnabled.svg';
 
 const TransferFilter = (props) => (
     <ul className="list-group list-group-flush TransferFilter">
-        {props.tickets.map((value) => {
+        {props.transfersList.map((value) => {
             return (
                 <li
                     className="list-group-item pl-0"
