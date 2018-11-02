@@ -22,7 +22,7 @@ const Content = (props) => {
     }
 
     return (
-    <div className="col-md-8">
+    <div className="col-lg-9">
         {props.tickets.map((value, index) => {
                 return value.visible ? <Ticket ticket={value} key={index}/> : '';
             }

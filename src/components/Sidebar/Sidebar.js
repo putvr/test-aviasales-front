@@ -6,7 +6,7 @@ import CurrencyFilter from './CurrencyFilter/CurrencyFilter';
 import TransferFilter from './TransferFilter/TransferFilter';
 
 const Sidebar = (props) => (
-    <div className="col-md-3 ">
+    <div className="col-lg-3 mb-3">
         <div className="container rounded border-white Sidebar">
             <div className="raw no-gutters pt-3">
                 <div className="col pb-2">
@@ -32,6 +32,6 @@ const Sidebar = (props) => (
             </div>
         </div>
     </div>
-)
+);
 
 export default Sidebar;
