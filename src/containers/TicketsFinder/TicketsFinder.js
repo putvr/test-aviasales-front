@@ -8,6 +8,7 @@ class TicketsFinder extends Component {
     state = {
         ticketsLoading: false,
         tickets: [],
+        showError: false,
         transfersList: [{id: 0, name: 'Все', selected: true, count: ''},
             {id: 1, name: 'Без пересадок', selected: false, count: 0},
             {id: 2, name: '1 пересадка', selected: false, count: 1},
@@ -109,9 +110,12 @@ class TicketsFinder extends Component {
         request.open('GET', 'http://localhost:3001/tickets.json', true);
         request.onload = () => {
 
+            if (request.status !== 200) {
+                this.setState({showError: true});
+                return
+            }
+
             let data = JSON.parse(request.response);
-            console.log(data.tickets
-                , typeof data);
 
             data = data.tickets.sort((a, b) => a.price - b.price);
 
@@ -141,11 +145,14 @@ class TicketsFinder extends Component {
 
             this.setState({
                 tickets: data,
-                ticketsLoading: false
+                ticketsLoading: false,
             });
-
+        };
+        request.onerror = () => {
+            this.setState({showError: true});
         };
         request.send(null);
+
     }
 
     componentWillMount() {
@@ -164,6 +171,7 @@ class TicketsFinder extends Component {
                 <Content
                     tickets={this.state.tickets}
                     ticketsLoading={this.state.ticketsLoading}
+                    showError={this.state.showError}
                 />
             </div>
         );
