@@ -22,29 +22,31 @@ const Ticket = (props) => (
             </div>
 
             <div className="col-sm-8">
-                <div className="container ">
-                    <div className="row pt-3">
-                        <div className="col-sm .FontLeft FontTime">{props.ticket.departure_time}</div>
-                        <div className="col-sm text-center TicketStops">
-                            <div>{props.ticket.stops_count ? props.ticket.stops_count : "\u00a0"}</div>
-                            <img className="img-fluid" src={arrow} alt=""/>
+                <div className="container pb-3">
+                    <div className="row">
+                        <div className="col-md-4 col-ld-5 pt-3">
+                            <div className="col-sm FontLeft FontTime">{props.ticket.departure_time}</div>
+                            <div className="col-sm FontLeft FontCity">
+                                {props.ticket.origin}, {props.ticket.origin_name} <br/>
+                                {props.ticket.departure_date}, {props.ticket.departure_date_day}
+                            </div>
                         </div>
-                        <div className="col-sm FontRight TicketArrival FontTime">{props.ticket.arrival_time}</div>
+                        <div className="col-md-4 col-ld-2 pt-3">
+                            <div className="col-sm text-center TicketStops">
+                                <div>{props.ticket.stops_count ? props.ticket.stops_count : "\u00a0"}</div>
+                                <img className="img-fluid" src={arrow} alt=""/>
+                            </div>
+                        </div>
+                        <div className="col-md-4 col-ld-5 pt-3">
+                            <div className="col-sm FontLeft TicketArrival FontTime">{props.ticket.arrival_time}</div>
+                            <div className="col-sm FontLeft FontCity">
+                                {props.ticket.destination}, {props.ticket.destination_name} <br/>
+                                {props.ticket.arrival_date}, {props.ticket.arrival_date_day}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div className="container pb-3">
-                    <div className="row">
-                        <div className="col-sm .FontLeft FontCity">
-                            {props.ticket.origin}, {props.ticket.origin_name} <br/>
-                            {props.ticket.departure_date}, {props.ticket.departure_date_day}
-                        </div>
-                        <div className="col-sm offset-md-2 FontRight FontCity  ">
-                            {props.ticket.destination}, {props.ticket.destination_name} <br/>
-                            {props.ticket.arrival_date}, {props.ticket.arrival_date_day}
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

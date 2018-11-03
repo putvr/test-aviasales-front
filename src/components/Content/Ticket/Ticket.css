@@ -44,10 +44,12 @@
     line-height: 12.1px;
 }
 
-.FontRight {
-    text-align: right;
-}
-
 .FontLeft {
     text-align: left;
+}
+
+@media (max-width: 768px) {
+    .FontLeft {
+        text-align: center;
+    }
 }
