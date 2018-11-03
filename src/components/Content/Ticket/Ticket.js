@@ -12,8 +12,9 @@ const Ticket = (props) => (
                 <div className="container pt-3">
                     <div className="row">
                         <div className="col-sm text-center">
-                            <img src={logo} className=" pb-3" alt=""/>
+                            <img src={logo} className="pb-3" alt=""/>
                         </div>
+                        <div className="w-100"></div>
                         <div className="col-sm text-center">
                             <button className="btn">Купить<br/>за {props.ticket.price_currency}</button>
                         </div>
