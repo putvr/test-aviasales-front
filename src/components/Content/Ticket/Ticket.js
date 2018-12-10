@@ -6,12 +6,11 @@ import arrow from './arrow.svg';
 
 const Ticket = (props) => (
 
-    <div className="container rounded Ticket">
+    <div className="container rounded Ticket mb-3">
 
         <div className="row">
-            <div className="col-4 TicketInfo">
-                <div className="container ">
-                    <div className="row pt-3"></div>
+            <div className="col-4 TicketInfo pb-3">
+                <div className="container pt-3">
                     <div className="row ">
                         <div className="col text-center">
                             <img src={logo} className="img-fluid pb-3" alt=""/>
@@ -19,7 +18,6 @@ const Ticket = (props) => (
                         </div>
                     </div>
                 </div>
-                <div className="row pb-3"></div>
             </div>
 
             <div className="col-8">
@@ -27,14 +25,14 @@ const Ticket = (props) => (
                     <div className="row pt-3">
                         <div className="col-4 text-left FontTime">{props.ticket.departure_time}</div>
                         <div className="col-4 text-center TicketStops">
-                            <div>{props.ticket.stops_count ? props.ticket.stops_count : "\u00a0" }</div>
-                            <img className="img-fluid" src={arrow} alt="" />
+                            <div>{props.ticket.stops_count ? props.ticket.stops_count : "\u00a0"}</div>
+                            <img className="img-fluid" src={arrow} alt=""/>
                         </div>
                         <div className="col-4 text-right TicketArrival FontTime">{props.ticket.arrival_time}</div>
                     </div>
                 </div>
 
-                <div className="container">
+                <div className="container pb-3">
                     <div className="row">
                         <div className="col-5 text-left FontCity">
                             {props.ticket.origin}, {props.ticket.origin_name} <br/>
@@ -45,12 +43,9 @@ const Ticket = (props) => (
                             {props.ticket.arrival_date}, {props.ticket.arrival_date_day}
                         </div>
                     </div>
-                    <div className="row pb-3"></div>
                 </div>
             </div>
         </div>
-
-        <div className="row mb-3"></div>
     </div>
 );
 
