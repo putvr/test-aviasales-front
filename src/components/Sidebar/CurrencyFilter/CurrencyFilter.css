@@ -1,0 +1,20 @@
+
+.CurrencyFilter {
+    border: 1px solid #D2D5D6;
+    color: #298CEC;
+    background-color: white;
+}
+
+.CurrencyFilter:active,
+.activeButton {
+    background: #2196F3;
+    border: 1px solid #2196F3;
+    color: white;
+}
+
+.CurrencyFilter:hover {
+    background: #F2FCFF !important;
+    color: #298CEC !important;
+    border: 1px solid #64B5F5 !important;
+    cursor: pointer;
+}

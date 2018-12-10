@@ -1,0 +1,16 @@
+
+.TransferFilter li {
+    font-size: 13px;
+    color: #4A4A4A;
+    //line-height: 35px;
+    border: none;
+}
+
+.TransferFilter li:hover {
+    background: #F1FCFF;
+    cursor: pointer;
+}
+
+.TransferFilter li>span {
+    margin-left: 10px;
+}
