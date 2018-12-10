@@ -2,7 +2,7 @@
   "name": "aviasales",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://putvr.github.io/avs",
+  "homepage": "https://putvr.github.io/test-aviasales-front/",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.3",
