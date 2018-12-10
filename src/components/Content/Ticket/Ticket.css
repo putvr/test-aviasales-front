@@ -13,8 +13,8 @@
 .TicketInfo button {
     background: #FF6D00;
    // box-shadow: 0 1px 0 0 #D64D08, 0 2px 1px 0 rgba(0,0,0,0.10);
-    border-radius: 5px;
-    font-size: 16px;
+   // border-radius: 5px;
+   // font-size: 16px;
     color: white;
 }
 
@@ -44,4 +44,12 @@
     line-height: 12.1px;
 }
 
+.FontLeft {
+    text-align: left;
+}
 
+@media (max-width: 768px) {
+    .FontLeft {
+        text-align: center;
+    }
+}
