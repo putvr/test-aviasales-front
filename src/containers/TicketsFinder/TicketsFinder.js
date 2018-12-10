@@ -107,7 +107,7 @@ class TicketsFinder extends Component {
 
         let request = new XMLHttpRequest();
         request.overrideMimeType("application/json");
-        request.open('GET', 'http://192.168.88.151:3001/tickets.json', true);
+        request.open('GET', 'https://raw.githubusercontent.com/KosyanMedia/test-tasks/master/aviasales/tickets.json', true);
         request.onload = () => {
 
             if (request.status !== 200) {
