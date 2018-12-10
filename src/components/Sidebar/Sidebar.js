@@ -14,7 +14,8 @@ const Sidebar = (props) => (
                 </div>
                 <div className="col">
                     <CurrencyFilter
-
+                        currencyList={props.currencyList}
+                        currencySelectedHandler={props.currencySelectedHandler}
                     />
                 </div>
             </div>
