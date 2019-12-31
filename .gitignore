@@ -23,3 +23,10 @@ yarn-error.log*
 # ide
 .vscode/*
 .idea/*
+
+# yarn v2 
+# https://next.yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
